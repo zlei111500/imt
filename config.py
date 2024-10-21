@@ -14,11 +14,11 @@ ITEM_CODES = ['10941', '10942']   # 需要预约的商品(默认只预约2个赚
 
 '''
 *********** 消息推送配置 ***********
-push plus 微信推送,具体使用参考  https://www.pushplus.plus
+基于苹果系统推送的bark推送，请自行查阅相关资料
 如没有配置则不推送消息
 为了安全,这里使用的环境配置.git里面请自行百度如何添加secrets.pycharm也可以自主添加.如果你实在不会,就直接用明文吧（O.o）
 '''
-PUSH_TOKEN = os.environ.get("PUSHPLUS_KEY")
+PUSH_UTL = os.environ.get("BARK_URL")
 
 
 '''

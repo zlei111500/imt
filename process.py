@@ -244,12 +244,11 @@ def act_params(shop_id: str, item_id: str):
 
 # 消息推送
 def send_msg(title, content):
-    if config.PUSH_TOKEN is None:
+    if config.PUSH_UTL is None:
         return
-    url = 'http://www.pushplus.plus/send'
-    r = requests.get(url, params={'token': config.PUSH_TOKEN,
-                                  'title': title,
-                                  'content': content})
+    url = f'{config.PUSH_UTL}'
+    r = requests.post(url, params={'title': title,
+                                  'body': content})
     logging.info(f'通知推送结果：{r.status_code, r.text}')
 
 def hide_mobile_number(mobile: str) -> str:
