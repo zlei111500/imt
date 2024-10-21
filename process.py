@@ -339,7 +339,7 @@ def getUserEnergyAward(mobile: str):
                              headers=headers, json={})
     # response.json().get('message') if '无法领取奖励' in response.text else "领取奖励成功"
     logging.info(
-        f'领取耐力 : mobile:{mobile} :  response code : {response.status_code}, response body : {response.text}')
+        f'领取耐力 : mobile:{hide_mobile_number(mobile)} :  response code : {response.status_code}, response body : {response.text}')
 
 
 def set_default_value(input_value, default_content):
