@@ -246,9 +246,8 @@ def act_params(shop_id: str, item_id: str):
 def send_msg(title, content):
     if config.PUSH_URL is None:
         return
-    url = f'{config.PUSH_URL}'
-    r = requests.post(url, params={'title': title,
-                                  'body': content})
+    url = f'{config.PUSH_URL}/{title}/{content}'
+    r = requests.get(url)
     logging.info(f'通知推送结果：{r.status_code, r.text}')
 
 def hide_mobile_number(mobile: str) -> str:
