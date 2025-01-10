@@ -14,13 +14,6 @@ logging.basicConfig(level=logging.INFO,
                     stream=sys.stdout,
                     datefmt=DATE_FORMAT)
 
-print(r'''
-**************************************
-    欢迎使用i茅台自动预约工具
-    作者GitHub：https://github.com/3 9 7 1 7 9 4 5 9
-    vx：L 3 9 7 1 7 9 4 5 9 加好友注明来意
-**************************************
-''')
 
 process.get_current_session_id()
 
@@ -75,8 +68,8 @@ for section in configs.sections():
             if not r_success:
                 s_title = '！！失败！！茅台预约'
             s_content = s_content + r_content + shopInfo + "\n"
-            # 领取小茅运和耐力值
-            process.getUserEnergyAward(mobile)
+        # 领取小茅运和耐力值
+        process.getUserEnergyAward(mobile)
     except BaseException as e:
         print(e)
         logging.error(e)
